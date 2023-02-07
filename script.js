@@ -16,6 +16,9 @@ const playPause = () => {
   }
 }
 
+const pause = () => {
+  
+}
 
 const start = () => {
   secondsSphere.style.animation = 'rotation 60s linear infinite';
@@ -25,4 +28,14 @@ const start = () => {
     runningTime = Date.now() - startTime;
     stopwatch.textContent = calculateTime(runningTime);
   }, 1000);
+}
+
+const calculateTime = runningTime => {
+  const totalSeconds = Math.floor(runningTime / 1000);
+  const totalMinutes = Math.floor(totalSeconds / 60);
+
+  const displaySeconds = (totalSeconds % 60).toString().padStart(2, "0");
+  const displayMinutes = totalMinutes.toString().padStart(2, "0");
+
+  return `${displayMinutes}:${displaySeconds}`
 }
