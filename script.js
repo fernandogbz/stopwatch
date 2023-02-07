@@ -17,7 +17,8 @@ const playPause = () => {
 }
 
 const pause = () => {
-  
+  secondsSphere.style.animationPlayState = 'paused';
+  clearInterval(stopwatchInterval);
 }
 
 const start = () => {
